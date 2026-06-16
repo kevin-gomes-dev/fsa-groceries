@@ -115,8 +115,8 @@ console.log("----- getTotalCost -----", getTotalCost(INVENTORY));
  */
 function getMostExpensiveItem(items) {
   // No price can be below 0
-  return items.reduce((acc, item) => {
-    return item.price > acc ? item.price : acc;
-  }, 0);
+  return items.reduce((accItem, item) => {
+    return item.price > accItem.price ? item : accItem;
+  });
 }
 console.log("----- getMostExpensiveItem -----", getMostExpensiveItem(INVENTORY));
